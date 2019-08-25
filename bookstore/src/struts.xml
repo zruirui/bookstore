@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		<!-- 用户注册  -->
+		<action name="register" class="user" method="register">
+			<result name="success">/register_success.jsp</result>
+		</action>
+		<!-- 用户登录 -->
+		<action name="login" class="user">
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>	
+		<!-- 用户注销  -->
+		<action name="logout" class="user" method="logout">
+			<result name="success">/index.jsp</result>
+		</action>	
+		<!-- 图书类别  -->
+		<action name="browseCatalog" class="book" method="browseCatalog">
+			<result name="success">/menu.jsp</result>
+		</action>	
+		<!-- 新书展示  -->
+		<action name="newBook" class="book" method="newBook">
+			<result name="success">/newBook_success.jsp</result>
+		</action>
+		<!-- 按类别展示图书  -->
+		<action name="browseBookPaging" class="book" method="browseBookPaging">
+			<result name="success">/browseBookPaging.jsp</result>
+		</action>	
+		<!-- 根据书名获取图书信息  -->
+		<action name="searchBook" class="book" method="searchBook">
+			<result name="success">/searchBook_result.jsp</result>
+		</action>	
+		<!-- 添加到购物车  -->
+		<action name="addToCart" class="shop" method="addToCart">
+			<result name="success">/addToCart_success.jsp</result>
+		</action>			
+		<!-- 更新购物车中图书数量  -->
+		<action name="updateCart" class="shop" method="updateCart">
+			<result name="success">/showCart.jsp</result>
+		</action>	
+		<!-- 结账功能  -->
+		<action name="checkout" class="shop" method="checkout">
+			<result name="success">/checkout_success.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>	
+	</package>
+</struts>
